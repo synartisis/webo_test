@@ -1,18 +1,9 @@
 const express = require('express')
-const esdev = require('esdev')
 const app = express()
 require('../common/common')
 const isProd = false
-const port = process.argv[2] || 4000
+const port = process.env.app_port || 3000
 
-app.use(esdev({
-  // globals: {
-  //   'vue/dist/vue': 'Vue',
-  // },
-  paths: {
-    'src/common': 'common',
-  },
-}))
 
 app.use(express.static(__dirname + '/../client/'))
 app.use(express.static(__dirname + '/../client/landing/'))

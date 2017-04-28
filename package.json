@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "nodemon --preserve-symlinks -w src/server -w ../esdev/index.js -w ../esdev/lib src/server",
-    "prod": "cross-env NODE_ENV=production node dist/server 5000"
+    "dev": "nodemon -w ../webo/*.js -w ../webo/lib --exec \"webo express src/server --verbose\" ",
+    "prod": "cross-env NODE_ENV=production app_port=5000 node dist/server"
   },
   "author": "mgalakos",
   "license": "ISC",
@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "cross-env": "^3.2.4",
-    "vue": "^2.2.4"
+    "vue": "^2.2.4",
+    "webo": "^0.4.4"
   }
 }
