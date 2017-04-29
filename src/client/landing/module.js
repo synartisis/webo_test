@@ -13,3 +13,4 @@ new Vue({
 })
 
 document.querySelector('#out-module').innerHTML = `modules content: <br> module2=${PI}, <br> module3=${m3_value}, <br>module=123`
+fetch('/api/testapi').then(o => o.text()).then(text => document.querySelector('#out-fetch').innerHTML = 'fetch response: ' + text)
